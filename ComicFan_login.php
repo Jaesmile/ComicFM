@@ -5,16 +5,19 @@
 <html lang="en-zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>ComicFM 登陆</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="keywords" content="漫FM,动漫音乐MV,音乐,动漫,动漫MV,在线动漫MV,音乐MV,动漫视频,音乐视频,动漫音乐"/>
+    <meta name="description" content="专为动漫迷打造的音乐盛会，仅供学习使用。"/>
+    <meta name="author" content="jae">
+    <title>ComicFM 登陆</title>
 
     <link rel="stylesheet" href="http://sandbox.runjs.cn/js/sandbox/bootstrap-2.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/comicfm.ico">
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <link rel="shortcut icon" href="images/comicfm.ico">
     <style>
         .error {
             color: #d9534f;
@@ -22,9 +25,10 @@
         }
     </style>
 </head>
-<body>
 
-<div class="container" id="div1" style="background-color: #f5f5f5; display: block">
+<!-- login -->
+<body>
+<div class="container" style="background-color: #f5f5f5; display: block;">
     <div class="modal" id="LoginDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
 
@@ -36,7 +40,8 @@
                     </div>
                     <div class="modal-body" style="background: url(images/33.jpg)">
                         <center>
-                            <p style="margin-top: 20px;"><input type="text" name="username" placeholder="您的邮箱地址或用户名"
+                            <p style="margin-top: 20px;">
+                                <input type="text" name="username" placeholder="您的邮箱地址或用户名"
                                       style="height: 30px; width: 230px;"/>
                                 <span class="error">* </span></p>
 

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+?>
 <html>
 <head lang="en-zh">
     <meta charset="UTF-8">
@@ -15,89 +18,8 @@
 
 <body>
 <?php
-    session_start();
+include_once("php/navbar.php");
 ?>
-<!--NAVBAR-->
-<header id="mynav" class="navbar navbar-default navbar-static-top bs-docs-nav navbar-fixed-top" role="banner">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
-                    data-target=".bs-navbar-collapse">
-                <span class="sr-only">缩放下拉列表</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="index.php" class="navbar-brand">Comic-FM</a>
-        </div>
-        <!--navbar header-->
-        <nav class="navbar-collapse bs-navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-            <ul class="nav navbar-nav" id="navtab">
-                <li>
-                    <a href="index.php">首页<span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">MV
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="ComicFan_mv.php">推荐MV</a></li>
-                        <li><a href="ComicFan_AllMv.php">全部MV</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        漫单
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="ComicFan_mList.php">推荐漫单</a></li>
-                        <li><a href="ComicFan_mMan.php">漫单达人</a></li>
-                        <li><a href="ComicFan_AllMList.php">全部漫单</a></li>
-                    </ul>
-                </li>
-
-                <li role="presentation"><a href="ComicFan_news.php">资讯</a></li>
-
-
-                <li role="presentation"><a href="#">
-                    <span class="badge badge-info pull-right" style="background-color: #46b8da">1</span>通知</a>
-                </li>
-
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" autocomplete="on"
-                               placeholder="名侦探柯南《Time after Time》">
-                    </div>
-                    <button type="button" class="btn btn-default">
-                        <span aria-hidden="true"><img src="images/btn_search.png" alt="btn_search"
-                                                      style="width: 25px;"/></span>
-                    </button>
-                </form>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        Vin
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">我的MV</a></li>
-                        <li><a href="#">我的漫友</a></li>
-                        <li><a href="#">我的漫单</a></li>
-                        <li><a href="#">我的漫粉</a></li>
-                        <li><a href="#">个人设置</a></li>
-                        <li><a href="#" class="">退出</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<!--END NAVBAR-->
 <br><br>
 
 <div class="container">
@@ -696,7 +618,10 @@
         </div>
     </div>
 </div>
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
 </body>
 </html>
