@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    $_SESSION["value"] = 4;
 ?>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="mv page">
-    <meta name="author" content="trecy">
-    <title>漫FM-Comic 漫资讯</title>
+    <meta name="description" content="admin">
+    <meta name="author" content="jae">
+    <title>漫FM-Comic 管理员</title>
     <!-- Bootstrap css-->
     <link rel="stylesheet" href="css/site.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,9 +19,61 @@
 </head>
 
 <body>
-<?php
-include_once("php/navbar.php");
-?>
+<!--NAVBAR-->
+<header id="mynav" class="navbar navbar-default navbar-static-top bs-docs-nav navbar-fixed-top" role="banner">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                    data-target=".bs-navbar-collapse">
+                <span class="sr-only">缩放下拉列表</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="ComicFan_admin.php" class="navbar-brand">Comic-FM</a>
+        </div>
+
+        <!--navbar header-->
+        <nav class="navbar-collapse bs-navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav" id="navtab">
+                <li>
+                    <input type="text" value="首页" />
+                </li>
+
+            <ul class="nav navbar-nav navbar-right">
+                <?php
+                    if (empty ( $_SESSION["username"] )) {
+                ?>
+                <li role="presentation">
+                    <a href="ComicFan_login.php">登陆</a>
+                </li>
+                <li role="presentation">
+                    <a href="ComicFan_register.php">注册</a>
+                </li>
+                <?php
+                }
+                    else
+                    {
+                ?>
+                <li>
+                    <a href="#" class="dropdown-toggle"
+                       data-toggle="dropdown" role="button"> 
+                       <?php echo $_SESSION["username"] ?>
+                       <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">个人设置</a></li>
+                        <li><a href="php/logout.php" class="">退出</a></li>
+                    </ul>
+                </li>
+                <?php
+                    }
+                ?>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!--END NAVBAR-->
 
 <div class="container" id="news">
     <div id="content_header" class="row" style="margin-top: 20px;">

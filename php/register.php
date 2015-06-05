@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if (isset($_POST["submit"]) && $_POST["submit"] == "注册")
 {
 
@@ -39,7 +41,8 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "注册")
 
         $sql_getuser = "SELECT nickname FROM user WHERE nickname = '$_POST[nickname]'";
         $result_user = mysql_query($sql_getuser);
-        if(!$result_user) //当前用户名已存在
+        $count = mysql_num_rows($result_user);
+        if($count != 0) //当前用户名已存在
         {
             echo "<script>alert('当前用户名已存在！'); history.go(-1);</script>";
         }
@@ -47,7 +50,8 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "注册")
         {
             $sql_getcount = "SELECT email FROM user WHERE email = '$_POST[username]'";
             $result_count = mysql_query($sql_getcount);
-            if(!$result_count) //当前邮箱已被注册
+            $num = mysql_num_rows($result_count);
+            if($num != 0) //当前邮箱已被注册
             {
                 echo "<script>alert('当前邮箱已被注册！'); history.go(-1);</script>";
             }
