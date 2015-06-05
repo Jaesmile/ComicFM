@@ -12,10 +12,10 @@
 
     <link rel="stylesheet" href="http://sandbox.runjs.cn/js/sandbox/bootstrap-2.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/comicfm.ico">
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
+    <link rel="shortcut icon" href="images/comicfm.ico">
+
     <style>
         .error {
             color: #d9534f;
@@ -24,9 +24,9 @@
     </style>
 
 </head>
-<!-- register -->
 <body>
-<div class="container" style="background-color: #f5f5f5; display: block">
+
+<div class="container" id="div1" style="background-color: #f5f5f5; display: block">
     <div class="modal" id="RegisterDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 
         <div class="modal-dialog">

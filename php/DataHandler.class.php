@@ -209,27 +209,21 @@ class DataHandler{
 		return $this->dbhelper->queryObjListBySql ( $sql );
 	}
 	
-	//for recommend mv button action
 	public function recommendMv($user_id,$mv_id){
-		$sql = "INSERT INTO recommend_mv(user_id, mv_id) VALUES ('$user_id','$mv_id')";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
-	//for recommend clist button action
+	
 	public function recommendClist($user_id,$clist_id){
-		$sql = "INSERT INTO recommend_clist(user_id, clist_id) VALUES ('$user_id','$clist_id')";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+	
 	}
-	//for collect mv button action
+	
 	public function collectdMv($user_id,$mv_id){
-		$sql = "INSERT INTO collect_mv(user_id, mv_id) VALUES ('$user_id','$mv_id')";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+	
 	}
-	//for follow clist button action
+	
 	public function followClist($user_id,$clist_id){
-		$sql = "INSERT INTO follow_clist(user_id, clist_id) VALUES ('$user_id','$clist_id')";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+	
 	}
-	//for play mv button action
 	/**
 	 * insert play record to play_mv table,select mv info in mv table
 	 * @param unknown $mv_id
@@ -237,78 +231,37 @@ class DataHandler{
 	 * @return this mv item
 	 */
 	public function playMv($mv_id,$user_id){
-		$time = time();
-		$sql = "INSERT INTO play_mv(user_id, mv_id,play_time) VALUES ('$user_id','$mv_id','$time')";
-		$this->dbhelper->queryObjListBySql ( $sql );
-		$sql2 = "select * from mv where mv_id = '$mv_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
 	
 	public function getMineMv($user_id){
-		$sql = "select * from mv where user_id = '$user_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
 	
 	public function getMineFriends($user_id){
-		$sql = "select * from follow_some where follow_user_id = '$user_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
 	
 	public function getMineFans($user_id){
-		$sql = "select * from follow_some where followed_user_id = '$user_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
 	
 	public function getMineNotice($user_id){
-		$sql = "select * from notice where user_id = '$user_id' and isRead = false";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
 
 	public function modifyMineInfo($user_id,$password,$portrait_path,$self_statement){
-		$sql = "update user set password = '$password' , portrait_path = '$portrait_path',
-		self_statementwhere = '$self_statement' where user_id = '$user_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
 	
 	public function getCompleteNews($news_id){
-		$sql = "select * from user where news_id = '$news_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+		
 	}
 	
-	public function getClistDetailById($clist_id){
-		$sql = "select * from comic_list where clist_id = '$clist_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
+	public function getClistDetail($clist_id){
+		
 	}
-
-	public function getMvDetailById($mv_id){
-		$sql = "select * from mv where mv_id = '$mv_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
-	}
-	// get the number of users that recommend the mv
-	public function getMvRecNum($mv_id){
-		$sql = "select count(*) from recommend_mv where mv_id = '$mv_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
-	}
-	// get the number of users that collect the mv
-	public function getMvColNum($mv_id){
-		$sql = "select count(*) from collect_mv where mv_id = '$mv_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
-	}
-	// get the number of users that play the mv
-	public function getMvPlayNum($mv_id){
-		$sql = "select count(*) from play_mv where mv_id = '$mv_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
-	}
-	// get the number of users that recommend the clist
-	public function getClistRecNum($clist_id){
-		$sql = "select count(*) from recommend_clist where clist_id = '$clist_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
-	}
-	// get the number of users that follow the clist
-	public function getClistfolNum($clist_id){
-		$sql = "select count(*) from follow_clist where clist_id = '$clist_id'";
-		return $this->dbhelper->queryObjListBySql ( $sql );
-	}
+	
 	
 }
 	

@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-    session_start();
-?>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -19,6 +16,9 @@
 
 </head>
 <body>
+<?php
+    session_start();
+?>
 <!--NAVBAR-->
 <header id="mynav" class="navbar navbar-default navbar-static-top bs-docs-nav navbar-fixed-top" role="banner">
     <div class="container-fluid">
@@ -91,10 +91,6 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <?php
-                    if (empty ( $_SESSION ["username"] )) 
-                    {
-                ?>
                 <li role="presentation"><a>
                     <button type="button" data-toggle="modal" data-target="#LoginDialog"
                             style="background-color: transparent; border: 0;">
@@ -107,14 +103,9 @@
                         注册
                     </button>
                 </a></li>
-                <?php
-                    } 
-                    else
-                    {
-                ?>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        <?php echo $_SESSION["username"] ?>
+                        UserName
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -126,9 +117,6 @@
                         <li><a href="#" class="">退出</a></li>
                     </ul>
                 </li>
-                <?php 
-                    } 
-                ?>
             </ul>
         </nav>
     </div>
@@ -411,6 +399,89 @@
         </nav>
     </center>
 </div>
+
+<!-- ModalLogin -->
+<div class="modal fade" id="LoginDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="LoginLabel">漫FM账号登录</h4>
+            </div>
+            <div class="modal-body" style="background: url(../images/29.jpg)">
+                <center>
+                    <p><input type="text" name="username" placeholder="您的邮箱地址或用户名" style="height: 30px; width: 230px;"/>
+                    </p>
+
+                    <p><input type="password" name="password" placeholder="请输入密码" style="height: 30px; width: 230px;"/>
+                    </p>
+
+                    <p>
+                        <span style="margin-right: 80px;"><label><input type="checkbox"
+                                                                        name="rememberMe"/>下次自动登录</label></span>
+                        <span><label><a href="#">忘记密码</a></label></span>
+                    </p>
+
+                    <p>
+                    <span style="margin-left: 65px;">
+                        还没有漫FM帐户？<a href="#">立即注册!</a>
+                    </span>
+                    </p>
+                </center>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">登陆</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ModelLogin END-->
+
+<!-- ModalRegister -->
+<div class="modal fade" id="RegisterDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="RegisterLabel">漫FM账号注册</h4>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <p><input type="text" name="username" placeholder="您的邮箱地址或用户名" style="height: 30px; width: 230px;"/>
+                    </p>
+
+                    <p><input type="password" name="password" placeholder="请输入密码" style="height: 30px; width: 230px;"/>
+                    </p>
+
+                    <p>
+                        <span style="margin-right: 80px;"><label><input type="checkbox"
+                                                                        name="rememberMe"/>下次自动登录</label></span>
+                        <span><label><a href="#">忘记密码</a></label></span>
+                    </p>
+
+                    <p>
+                    <span style="margin-left: 60px;">
+                        还没有漫FM帐户？<a href="#">立即注册!</a>
+                    </span>
+                    </p>
+                </center>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ModelRegister END-->
 
 <footer class="footer">
     <div class="container">
